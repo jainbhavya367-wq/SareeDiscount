@@ -139,14 +139,14 @@
 
   // The discount is rolled once per scan/visit — reloading this same page will NOT
   // change the result, so nobody can refresh their way to a better prize.
-  // Only clean values: 100, 150, 200, 250, 300 — lower ones far more likely, ₹300 is rare.
+  // Only clean values: 100, 150, 200, 250, 300 — 200/250/300 are made deliberately rare.
   function weightedDiscount(){
     const options = [
-      { value: 100, weight: 35 },
-      { value: 150, weight: 27 },
-      { value: 200, weight: 20 },
-      { value: 250, weight: 12 },
-      { value: 300, weight: 6  }   // rarest
+      { value: 100, weight: 45 },
+      { value: 150, weight: 32 },
+      { value: 200, weight: 13 },
+      { value: 250, weight: 7  },
+      { value: 300, weight: 3  }   // rarest
     ];
     const total = options.reduce((sum, o) => sum + o.weight, 0);
     let r = Math.random() * total;
