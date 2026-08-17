@@ -81,6 +81,17 @@
   .tassel{width:3px; height:32px; background:repeating-linear-gradient(180deg, var(--thread) 0 5px, var(--marigold) 5px 10px); border-radius:2px; position:relative;}
   .tassel::after{content:''; position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); width:8px; height:8px; border-radius:50%; background:var(--marigold); box-shadow:0 0 0 2px var(--cream), 0 0 0 3px var(--thread);}
 
+  .join-btn{
+    display:inline-block; margin-top:22px; background:#25D366; color:#fff; text-decoration:none;
+    font-family:'Mukta', sans-serif; font-weight:700; font-size:0.95rem; padding:13px 26px;
+    border-radius:999px; letter-spacing:0.01em; box-shadow:0 10px 22px rgba(37,211,102,0.35);
+    opacity:0; animation:riseIn 0.5s ease-out 1.0s forwards;
+  }
+  .claim-note{
+    font-size:0.78rem; color:var(--ink-soft); margin-top:10px; line-height:1.5;
+    opacity:0; animation:riseIn 0.5s ease-out 1.1s forwards;
+  }
+
   @keyframes riseIn{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
 </style>
 </head>
@@ -100,6 +111,9 @@
   <div class="reveal-shop" id="revealShop"></div>
   <div class="reveal-instr" id="revealInstr"></div>
   <div class="reveal-badge" id="revealBadge"></div>
+
+  <a href="https://chat.whatsapp.com/EAwzmlGDOJRBwFDkkGSAfa?s=cl&p=a&mlu=0" target="_blank" rel="noopener" class="join-btn" id="joinBtn">Join our WhatsApp group to claim this</a>
+  <div class="claim-note">Join the group, then show this screen at the counter to redeem.</div>
 
   <div class="tassels"><div class="tassel"></div><div class="tassel"></div><div class="tassel"></div></div>
 </div>
