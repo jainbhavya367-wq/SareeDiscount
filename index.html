@@ -143,9 +143,9 @@
   function weightedDiscount(){
     const options = [
       { value: 100, weight: 40 },
-      { value: 125, weight: 27 },
+      { value: 120, weight: 27 },
       { value: 150, weight: 18 },
-      { value: 175, weight: 10 },
+      { value: 170, weight: 10 },
       { value: 200, weight: 5  }   // rarest
     ];
     const total = options.reduce((sum, o) => sum + o.weight, 0);
@@ -157,7 +157,7 @@
     return options[0].value;
   }
 
-  const validValues = [100, 125, 150, 175, 200];
+  const validValues = [100, 120, 150, 170, 200];
   const stored = sessionStorage.getItem('rakhiScanWon');
   const storedNum = stored ? parseInt(stored, 10) : null;
   const won = (storedNum !== null && validValues.includes(storedNum)) ? storedNum : weightedDiscount();
