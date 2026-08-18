@@ -157,9 +157,11 @@
     return options[0].value;
   }
 
+  const validValues = [100, 125, 150, 175, 200];
   const stored = sessionStorage.getItem('rakhiScanWon');
-  const won = stored ? parseInt(stored, 10) : weightedDiscount();
-  if(!stored){ sessionStorage.setItem('rakhiScanWon', won); }
+  const storedNum = stored ? parseInt(stored, 10) : null;
+  const won = (storedNum !== null && validValues.includes(storedNum)) ? storedNum : weightedDiscount();
+  sessionStorage.setItem('rakhiScanWon', won);
 
   document.getElementById('revealPct').textContent = '₹' + won;
   if(shop){ document.getElementById('revealShop').textContent = shop; }
